@@ -11,17 +11,19 @@
       method: "GET"
     })
     .then(function(response) {
-        // console.log("response: " , response);
+        console.log("response: " , response);
 
-        // var newCity = response.name
+        
+
+        
+        
         var newToList = $("<ul>");
-        // newToList.attr("name", newCity);
         //Inserts the new city to the top of the list
         $(".list-group").prepend(newToList, city_name);
-        console.log(newCity); 
+        // console.log(newToList); 
     
-
-
+        // var newCity = response.name
+        // newToList.attr("name", newCity);
         
     });
     })
