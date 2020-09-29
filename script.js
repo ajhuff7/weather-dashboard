@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     
-    
+    var date = moment().format('MM/DD/YYYY');
     
     $("#searchBtn").on("click", function(event) {
 
@@ -20,22 +20,49 @@ $(document).ready(function () {
     .then(function(response) {
         console.log("response: " , response);
 
-        
 
-        $(".cityName").append(city_name);
-        $(".temp").append("Temperature: ", response.main.temp.toFixed(1) + " ℉");
-        $(".humidity").append("Humidity: ", response.main.humidity + "%");
-        $(".windSpeed").append("Wind Speed: ", response.wind.speed + " MPH");
+        $(".cityName").text(city_name + " (" + date + ") ");
+        $(".temp").text("Temperature: ", response.main.temp.toFixed(1) + " ℉");
+        $(".humidity").text("Humidity: ", response.main.humidity + "%");
+        $(".windSpeed").text("Wind Speed: ", response.wind.speed + " MPH");
         
-        
+        // var realTemp = response.main.temp = num.toFixed(1);
         var newToList = $("<ul>");
         //Inserts the new city to the top of the list
         $(".list-group-item").prepend(newToList, city_name);
         // console.log(newToList); 
-    
-        // var newCity = response.name
-        // newToList.attr("name", newCity);
 
+
+        if (response.weather[0].main == "Clear" || response.weather[0].main == "Sunny") {
+            $("#weatherIcon").removeClass("fas fa-arrow-left").addClass("fas fa-sun");
+        }
+
+        else if (response.weather[0].main == "Snow") {
+            $("#weatherIcon").removeClass("fas fa-arrow-left").addClass("far fa-snowflake");
+        }
+
+        else if (response.weather[0].main == "Windy") {
+            $("#weatherIcon").removeClass("fas fa-arrow-left").addClass("fas fa-wind");
+        }
+
+        else if (response.weather[0].main == "Rain" || response.weather[0].main == "Stormy") {
+            $("#weatherIcon").removeClass("fas fa-arrow-left").addClass("fas fa-umbrella");
+        }
+
+        else if (response.weather[0].main == "Clouds" || response.weather[0].main == "Thunder" ) {
+            $("#weatherIcon").removeClass("fas fa-arrow-left").addClass("fas fa-cloud");
+        }
+
+        else {
+            $("#weatherIcon").removeClass("fas fa-arrow-left").addClass("fas fa-meteor");
+        }
+        
+      
+
+        var coordLat = response.coord.lat
+        var coordLon = response.coord.lon
+        console.log(coordLat)
+        console.log(coordLon)
     });
 
     })
