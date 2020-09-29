@@ -15,20 +15,43 @@
     <link rel="stylesheet" href="style.css"/>
     <title>Weather Dashboard</title>
   </head>
-
   <body>
     <header class="container-fluid text-center bg-dark text-white">
         <h1>Weather Dashboard</h1>
     </header>
+    <div class="container">
+        <div class="row">
+            <div class="card col-3 border border-danger" id="citySearch">
+                <label class="font-weight-bold" for="citySearchBox">Search for a City: </label>
+                <input type="text" class="form-control" id="citySearchBox" placeholder="city">
+                <div class="form">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">City1</li>
+                        <li class="list-group-item">City2</li>
+                        <li class="list-group-item">City3</li>
+                        <li class="list-group-item">City4</li>
+                        <li class="list-group-item">City5</li>
+                        <li class="list-group-item">City6</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card col-8 border border-warning" Id="cityDetails">
+
+            </div>
+            <div class="card col-8 border border-success" id="fiveDay">
+                <button class="btn btn-primary" id="day1">1</button>
+                <button class="btn btn-primary" id="day2">2</button>
+                <button class="btn btn-primary" id="day3">3</button>
+                <button class="btn btn-primary" id="day4">4</button>
+                <button class="btn btn-primary" id="day5">5</button>
+              </div>
+            </div>
+        </div>
+    </div>
 
 
 
-
-
-
-
-
-
+    <footer class="container position fixed"></footer>
     
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
