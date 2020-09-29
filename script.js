@@ -1,11 +1,27 @@
-// function getWeather() {
+
+
+    $("#searchBtn").on("click", function(event) {
 
     var city_name = $("#citySearchBox").val();
-    var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + city_name + "&appid=37574b1d6986c3e876db8a1d6e2f05dc";
+    
+    console.log(city_name)
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&appid=37574b1d6986c3e876db8a1d6e2f05dc";
     $.ajax({
       url: queryURL,
       method: "GET"
-    // }).then(function(response) {
-    //   $("#").text(JSON.stringify(response));
-    // });
-//   }
+    })
+    .then(function(response) {
+        // console.log("response: " , response);
+
+        // var newCity = response.name
+        var newToList = $("<ul>");
+        // newToList.attr("name", newCity);
+        //Inserts the new city to the top of the list
+        $(".list-group").prepend(newToList, city_name);
+        console.log(newCity); 
+    
+
+
+        
+    });
+    })
