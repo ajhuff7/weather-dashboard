@@ -16,12 +16,12 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
-    <header class="container-fluid text-center bg-dark text-white">
+    <header class="container container fluid text-center bg-info text-white">
         <h1>Weather Dashboard</h1>
     </header>
     <div class="container">
         <div class="row">
-            <div class="card col-3 border border-danger" id="citySearch">
+            <div class="card-body col-4" id="citySearch">
                 <label class="font-weight-bold" for="citySearchBox">Search for a City: </label>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="City" id="citySearchBox" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -31,32 +31,54 @@
                   </div>
                   <form class="form">
                     <ul class="list-group-item"></ul>
-                </form>
+                </form> 
                 </div>
-                <div class="card-body col-8 border border-warning" Id="cityDetails">
+                <div class="card-body col-4" Id="cityDetails">
                     <h2 class="cityName"></h2>
                     <icon class="fas fa-arrow-circle-left" type="button" id="weatherIcon"></icon>
                     <p class="temp"></p>
                     <p class="humidity"></p>
                     <p class="windSpeed"></p>
-                    <p class= "badge badge-transparent" id="uvIndex"></p>                
+                    <p class="badge badge-transparent" id="uvIndex"></p>                
                 </div>
-            </div>
-
-            <div class="card col-8 border border-success" id="fiveDay">
-                <button class="btn btn-info" id="day1">1</button>
-                <button class="btn btn-info" id="day2">2</button>
-                <button class="btn btn-info" id="day3">3</button>
-                <button class="btn btn-info" id="day4">4</button>
-                <button class="btn btn-info" id="day5">5</button>
-              </div>
+                <div class="card-body col-4" id="fiveDay">
+                    <label class="font-weight-bold" for="forecastBox">5 Day Forecast: </label>
+                    <div class="card" id="day1">
+                        <p class="date1"></p>
+                        <icon class="fas fa-arrow-circle-left" id="weatherIcon1"></icon>
+                        <p class="temps1"></p>
+                        <p class="hum1"></p>
+                    </div>
+                    <div class="card" id="day2">
+                        <p class="date2"></p>
+                        <icon class="fas fa-arrow-circle-left" id="weatherIcon2"></icon>
+                        <p class="temps2"></p>
+                        <p class="hum2"></p>
+                    </div>
+                    <div class="card" id="day3">
+                        <p class="date3"></p>
+                        <icon class="fas fa-arrow-circle-left" id="weatherIcon3"></icon>
+                        <p class="temps3"></p>
+                        <p class="hum3"></p>
+                    </div>
+                    <div class="card" id="day4">
+                        <p class="date4"></p>
+                        <icon class="fas fa-arrow-circle-left" id="weatherIcon4"></icon>
+                        <p class="temps4"></p>
+                        <p class="hum4"></p>
+                    </div>
+                    <div class="card" id="day5">
+                        <p class="date5"></p>
+                        <icon class="fas fa-arrow-circle-left" id="weatherIcon5"></icon>
+                        <p class="temps5"></p>
+                        <p class="hum5"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-
-    <footer class="container position fixed"></footer>
+    <footer class="container position top"></footer>
     
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
